@@ -1,0 +1,14 @@
+﻿{
+  "name": "daily-news-radar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A daily topic-based news crawler website powered by RSS feeds.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "NEWS_RUN_ON_START=true node src/server.js",
+    "crawl": "node scripts/crawl-once.js",
+    "build:pages": "node scripts/generate-static-data.js",
+    "test": "node --test"
+  }
+}

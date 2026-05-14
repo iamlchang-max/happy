@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daily News Radar</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <span class="brand">Daily News Radar</span>
+        <button id="crawlButton" class="primary-button">立即更新</button>
+      </nav>
+      <section class="hero-content">
+        <p class="eyebrow">每日新聞爬蟲網站</p>
+        <h1>每天自動蒐集你有興趣的題材</h1>
+        <p>輸入關鍵題材，系統會依排程抓取 Google News RSS 與自訂 RSS 來源，整理成可搜尋、可篩選的新聞清單。</p>
+      </section>
+    </header>
+
+    <main class="layout">
+      <aside class="panel">
+        <h2>追蹤題材</h2>
+        <form id="topicForm" class="topic-form">
+          <input id="topicInput" name="topic" type="text" placeholder="例如：OpenAI、台積電、電動車" autocomplete="off">
+          <button type="submit">新增</button>
+        </form>
+        <div id="topics" class="topic-list" aria-live="polite"></div>
+
+        <div class="status-card">
+          <h2>系統狀態</h2>
+          <dl>
+            <div><dt>排程</dt><dd id="cronText">—</dd></div>
+            <div><dt>新聞數</dt><dd id="newsCount">0</dd></div>
+            <div><dt>最後更新</dt><dd id="lastRun">尚未更新</dd></div>
+          </dl>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div class="toolbar">
+          <div>
+            <p class="eyebrow">News Feed</p>
+            <h2 id="feedTitle">全部新聞</h2>
+          </div>
+          <input id="searchInput" type="search" placeholder="搜尋標題或摘要">
+        </div>
+        <div id="message" class="message" hidden></div>
+        <div id="newsList" class="news-list" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
